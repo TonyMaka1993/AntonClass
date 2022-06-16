@@ -11,17 +11,19 @@ import java.util.List;
 
 public class DigitConvertImpl implements DigitConvert {
     @Override
-    public String convert(int digit, int radix) {
+    public String convert(double digit, int radix) {
+        int newDigit = (int) Math.round(digit);
+
         List<Character> listNumbers = getAllRadix();
 
-        if (radix < 2 || radix >= listNumbers.size() || digit < 0) {
+        if (radix < 2 || radix >= listNumbers.size() || newDigit < 0) {
             throw new IllegalArgumentException();
         }
 
         StringBuilder value = new StringBuilder();
-        while (digit > 0) {
-            value.insert(0, listNumbers.get(digit % radix));
-            digit /= radix;
+        while (newDigit > 0) {
+            value.insert(0, listNumbers.get(newDigit % radix));
+            newDigit /= radix;
         }
         return value.toString();
     }

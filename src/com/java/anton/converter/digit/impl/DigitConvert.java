@@ -1,5 +1,5 @@
 package anton.converter.digit.impl;
 
 public interface DigitConvert {
-    String convert(int digit, int radix);
+    String convert(double digit, int radix);
 }

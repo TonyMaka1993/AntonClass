@@ -19,7 +19,7 @@ class DigitConvertImplTest {
     protected final String incorrectDigit2 = "3*";
 
     protected final int incorrectRadix1 = -3;
-    protected final String incorrectRadix3 = "m";
+    protected final String incorrectRadix2 = "m";
 
 
     @Test
@@ -44,5 +44,6 @@ class DigitConvertImplTest {
 
     @Test
     void convertWithIncorrectType() {
+
     }
 }
