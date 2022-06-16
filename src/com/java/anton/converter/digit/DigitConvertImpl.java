@@ -12,12 +12,12 @@ import java.util.List;
 public class DigitConvertImpl implements DigitConvert {
     @Override
     public String convert(int digit, int radix) {
-
         List<Character> listNumbers = getAllRadix();
 
         if (radix < 2 || radix >= listNumbers.size() || digit < 0) {
             throw new IllegalArgumentException();
         }
+
         StringBuilder value = new StringBuilder();
         while (digit > 0) {
             value.insert(0, listNumbers.get(digit % radix));
@@ -36,6 +36,4 @@ public class DigitConvertImpl implements DigitConvert {
         }
         return digits;
     }
-
-
 }
