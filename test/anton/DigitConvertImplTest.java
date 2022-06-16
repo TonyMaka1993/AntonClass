@@ -29,16 +29,16 @@ class DigitConvertImplTest {
 
     @Test
     void convert_9() {
-
+        Assertions.assertEquals("2055", digitConvert.convert(digit_b, radix_b));
     }
 
     @Test
     void convert_14() {
-
+        Assertions.assertEquals("27D6B", digitConvert.convert(98486, 14));
     }
 
     @Test
     void convertException() {
-
+        Assertions.assertThrows(Exception.class, () -> digitConvert.convert(incorrectDigit_a, incorrectRadix_a));
     }
 }
