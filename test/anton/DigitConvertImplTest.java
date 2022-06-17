@@ -1,6 +1,6 @@
 package anton;
 
-import anton.converter.digit.DigitConvertImpl;
+import anton.converter.digit.impl.DigitConvertImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

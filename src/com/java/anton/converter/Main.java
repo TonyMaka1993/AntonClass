@@ -1,6 +1,6 @@
 package anton.converter;
 
-import anton.converter.digit.DigitConvertImpl;
+import anton.converter.digit.impl.DigitConvertImpl;
 
 import java.util.Scanner;
 
