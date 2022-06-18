@@ -8,6 +8,7 @@ public class Main {
     private static int digit;
     private static int radix;
 
+
     private static void inputDigit() {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Please type a digit:-->");
@@ -21,6 +22,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
         inputDigit();
         System.out.println(new DigitConvertImpl().convert(digit, radix));
     }

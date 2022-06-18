@@ -21,12 +21,13 @@ public class DigitConvertImpl implements DigitConvert {
         StringBuilder value = new StringBuilder();
         while (number > 0) {
             value.insert(0, listNumbers.get(number % radix));
-            number /= radix;
+            number = number / radix;
         }
         return value.toString();
     }
 
     private static List<Character> getAllRadix() {
+        // 1_ _ _ _ _9 A_ _ _ _ _ _ _ _ _Z
         ArrayList<Character> digits = new ArrayList<>();
         for (char i = '0'; i <= '9'; i++) {
             digits.add(i);
