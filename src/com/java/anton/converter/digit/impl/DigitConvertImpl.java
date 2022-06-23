@@ -1,33 +1,35 @@
 package anton.converter.digit.impl;
-/*
-1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - 11 - 12 - 13 - 14.......-->10
-1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 -  A   -B  - C  - D  - E.......-->14
- */
 
 import anton.converter.digit.DigitConvert;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class DigitConvertImpl implements DigitConvert {
+
     @Override
-    public String convert(int number, int radix) {
+    public String convert(double number, int radix, int precision) {
+        int[] leftAndRight = getFraction(number, precision);
         List<Character> listNumbers = getAllRadix();
-
-        if (radix < 2 || radix >= listNumbers.size() || number < 0) {
-            throw new IllegalArgumentException();
-        }
-
+        List<String> stringList = new LinkedList<>();
         StringBuilder value = new StringBuilder();
-        while (number > 0) {
-            value.insert(0, listNumbers.get(number % radix));
-            number = number / radix;
+
+            if (radix < 2 || radix >= listNumbers.size() || number < 0) {
+                throw new IllegalArgumentException();
+            }
+            for (int i = 0; i < leftAndRight.length; i++) {
+                while (leftAndRight[i] > 0) {
+                    value.insert(0, listNumbers.get(leftAndRight[i] % radix));
+                    leftAndRight[i] = leftAndRight[i] / radix;
+                }
+                stringList.add(value.toString());
         }
-        return value.toString();
+
+        return stringList.get(0) + "." + stringList.get(1);
     }
 
     private static List<Character> getAllRadix() {
-        // 1_ _ _ _ _9 A_ _ _ _ _ _ _ _ _Z
         ArrayList<Character> digits = new ArrayList<>();
         for (char i = '0'; i <= '9'; i++) {
             digits.add(i);
@@ -36,5 +38,13 @@ public class DigitConvertImpl implements DigitConvert {
             digits.add(i);
         }
         return digits;
+    }
+
+    private static int[] getFraction(double digit, int precision) {
+        String example = Double.toString(digit);
+        String[] array = example.split("\\.");
+        String fraction = array[1].substring(0, precision);
+
+        return new int[]{Integer.parseInt(array[0]), Integer.parseInt(fraction)};
     }
 }
