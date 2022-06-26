@@ -11,8 +11,11 @@ public class DigitConvertImpl implements DigitConvert {
     @Override
     public String convert(double number, int radix, int precision) {
         int[] leftAndRight = getFraction(number, precision);
+
         List<Character> listNumbers = getAllRadix();
+
         List<String> stringList = new LinkedList<>();
+
         StringBuilder value = new StringBuilder();
 
             if (radix < 2 || radix >= listNumbers.size() || number < 0) {
@@ -43,8 +46,9 @@ public class DigitConvertImpl implements DigitConvert {
     private static int[] getFraction(double digit, int precision) {
         String example = Double.toString(digit);
         String[] array = example.split("\\.");
+        //[ 987 |,| 145654 ]
         String fraction = array[1].substring(0, precision);
 
-        return new int[]{Integer.parseInt(array[0]), Integer.parseInt(fraction)};
+        return new int[] { Integer.parseInt(array[0]), Integer.parseInt(fraction)};
     }
 }

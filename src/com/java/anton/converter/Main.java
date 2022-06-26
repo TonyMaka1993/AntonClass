@@ -1,6 +1,7 @@
 package anton.converter;
 
 import anton.converter.digit.impl.DigitConvertImpl;
+import anton.converter.person.Hobby;
 
 import java.util.Scanner;
 
@@ -26,6 +27,6 @@ public class Main {
         }
 
     public static void main(String[] args) {
-        inputDigit();
+
     }
 }
