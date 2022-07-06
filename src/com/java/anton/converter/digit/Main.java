@@ -1,4 +1,4 @@
-package anton.converter;
+package anton.converter.digit;
 
 import anton.converter.digit.impl.DigitConvertImpl;
 import anton.converter.person.Hobby;
