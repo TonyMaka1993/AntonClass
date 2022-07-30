@@ -6,14 +6,14 @@ import anton.converter.person.IGreeting;
 import java.util.List;
 
 public class IGreetingImpl implements IGreeting {
-    private String firstName;
-    private String secondName;
-    private String lastName;
-    private List<Hobby> hobby;
-    private String bitBucketUrl;
-    private String phone;
-    private String courseExpectation;
-    private String educationInfo;
+    private final String firstName;
+    private final String secondName;
+    private final String lastName;
+    private final List<Hobby> hobby;
+    private final String bitBucketUrl;
+    private final String phone;
+    private final String courseExpectation;
+    private final String educationInfo;
 
     public IGreetingImpl(String firstName, String secondName, String lastName,
                          String bitBucketUrl, String phone, String courseExpectation,
@@ -26,37 +26,6 @@ public class IGreetingImpl implements IGreeting {
         this.courseExpectation = courseExpectation;
         this.educationInfo = educationInfo;
         this.hobby = hobby;
-    }
-
-    public IGreetingImpl() {
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setBitBucketUrl(String bitBucketUrl) {
-        this.bitBucketUrl = bitBucketUrl;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public void setCourseExpectation(String courseExpectation) {
-        this.courseExpectation = courseExpectation;
-    }
-
-    public void setEducationInfo(String educationInfo) {
-        this.educationInfo = educationInfo;
     }
 
     @Override
@@ -72,11 +41,6 @@ public class IGreetingImpl implements IGreeting {
     @Override
     public String getLastName() {
         return lastName;
-    }
-
-    @Override
-    public List<Hobby> getHobbies() {
-        return null;
     }
 
     @Override

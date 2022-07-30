@@ -1,5 +1,4 @@
 package anton.converter.person;
-
 public class Hobby {
     byte id;
     String name;
