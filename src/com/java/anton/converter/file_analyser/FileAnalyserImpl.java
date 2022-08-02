@@ -58,22 +58,15 @@ public class FileAnalyserImpl implements FileAnalyser {
     }
 
     @Override
-    public void saveSummary(String filePath) throws IOException {
-        getFileName();
-        getRowsCount();
-        getLetterCount();
-        getWordsCount();
-        getLongestWord();
+    public void saveSummary () throws IOException {
 
      File file = new File ("C:\\AntonClass\\src\\com\\java\\anton\\converter\\file_analyser\\summary.txt");
-     if (file.createNewFile()){
-         System.out.println("File is created!");
-     }
-     else{
-             System.out.println("File is already exists!");
-       }
-       FileWriter writer = new FileWriter(file);
-     writer.write("Test");
+     FileWriter writer = new FileWriter(file);
+     writer.write (getFileName() + "\n");
+        writer.write (getRowsCount() + "\n");
+        writer.write (getLetterCount() + "\n");
+        writer.write (getWordsCount() + "\n");
+        writer.write (getLongestWord());
      writer.close();
     }
 }

@@ -11,6 +11,7 @@ public class Main {
         System.out.println(analyser.getFileName());
         System.out.println(analyser.getRowsCount());
         System.out.println(analyser.getLongestWord());
+        analyser.saveSummary();
 
     }
 }
